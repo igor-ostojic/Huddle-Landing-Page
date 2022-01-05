@@ -87,6 +87,8 @@ main {
   -webkit-box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 3rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .right_side button:hover {
@@ -131,9 +133,15 @@ main {
 
 @media (min-width: 900px) {
   body {
+    min-height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
     padding: 4rem;
     background-color: #674baf;
     background-image: url(images/bg-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   main {
     max-width: 100%;
@@ -163,6 +171,17 @@ main {
     max-width: 100%;
   }
   .right_side {
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    gap: 1.2rem;
+    padding: 0 11rem 0 6rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .right_side .text {
+    margin-top: 7rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -170,29 +189,27 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 1.2rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    gap: 1rem;
   }
   .right_side h1 {
-    text-align: center;
+    text-align: left;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: white;
   }
   .right_side p {
-    padding: 0 0.3rem;
-    text-align: center;
+    padding-right: 4.1rem;
+    text-align: left;
     color: white;
     margin-bottom: 0.3rem;
   }
   .right_side button {
+    margin-top: 0.5rem;
     background-color: white;
     width: 70%;
-    max-width: 250px;
-    height: 2.7rem;
+    max-width: 180px;
+    height: 3.2rem;
     border-radius: 500px;
     border: none;
     color: #674baf;
@@ -206,6 +223,10 @@ main {
     cursor: pointer;
   }
   .right_side footer {
+    padding-right: 4.1rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    justify-self: flex-end;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -213,8 +234,8 @@ main {
   }
   .right_side footer .icon_wrap {
     position: relative;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
     border: 1px solid white;
   }
@@ -223,7 +244,7 @@ main {
     cursor: pointer;
   }
   .right_side footer .icon_wrap .fab {
-    font-size: 0.75rem;
+    font-size: 1.4rem;
     color: white;
     position: absolute;
     top: 50%;

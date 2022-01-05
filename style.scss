@@ -73,6 +73,7 @@ main {
     color: $Violet;
     box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 3rem;
+    transition: all 0.2s ease;
 
     &:hover {
       background-color: $Soft-Magenta;
@@ -114,12 +115,14 @@ main {
 
 @media (min-width: 900px) {
   body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
     padding: 4rem;
     background-color: $Violet;
     background-image: url(images/bg-desktop.svg);
-    // background-position: unset;
-    // background-size: cover;
-    // background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   main {
@@ -145,30 +148,42 @@ main {
   }
 
   .right_side {
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    display: grid;
+    // flex-direction: column;
     gap: 1.2rem;
-    align-items: center;
+    // align-items: flex-start;
+    padding: 0 11rem 0 6rem;
+    justify-content: space-between;
+
+    .text {
+      margin-top: 7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     h1 {
-      text-align: center;
+      text-align: left;
       font-family: "Poppins", sans-serif;
       font-weight: 600;
-      font-size: 1.5rem;
+      font-size: 3rem;
       color: white;
     }
 
     p {
-      padding: 0 0.3rem;
-      text-align: center;
+      padding-right: 4.1rem;
+      text-align: left;
       color: white;
       margin-bottom: 0.3rem;
     }
 
     button {
+      margin-top: 0.5rem;
       background-color: white;
       width: 70%;
-      max-width: 250px;
-      height: 2.7rem;
+      max-width: 180px;
+      height: 3.2rem;
       border-radius: 500px;
       border: none;
       color: $Violet;
@@ -183,13 +198,16 @@ main {
     }
 
     footer {
+      padding-right: 4.1rem;
+      align-self: flex-end;
+      justify-self: flex-end;
       display: flex;
       gap: 1rem;
 
       .icon_wrap {
         position: relative;
-        height: 2rem;
-        width: 2rem;
+        height: 3rem;
+        width: 3rem;
         border-radius: 50%;
         border: 1px solid white;
         &:hover {
@@ -198,7 +216,7 @@ main {
         }
 
         .fab {
-          font-size: 0.75rem;
+          font-size: 1.4rem;
           color: white;
           position: absolute;
           top: 50%;
